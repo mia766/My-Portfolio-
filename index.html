@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Oumnya Jabil — Mechatronics Portfolio</title>
+  <meta name="description" content="Portfolio of Oumnya Jabil — Final-year Mechatronics Engineering student" />
+
+  <style>
+    :root{
+      --accent:#AEDFF7;
+      --bg:#ffffff;
+      --muted:#6b7280;
+      --card:#f8fbff;
+      --glass: rgba(173,223,247,0.12);
+      --maxw:1100px;
+      --radius:12px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#f6fbff);color:#0b1220;line-height:1.45}
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;gap:18px}
+
+    .photo{
+      width:110px;
+      height:110px;
+      border-radius:14px;
+      object-fit:cover;
+      background:var(--card);
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    h1{margin:0;font-size:1.45rem}
+    .sub{color:var(--muted);margin-top:6px}
+    nav{position:sticky;top:14px;backdrop-filter:blur(6px);background:rgba(255,255,255,0.6);border-radius:10px;padding:8px 12px;display:flex;gap:10px;align-items:center}
+    nav a{color:#0b1220;text-decoration:none;font-weight:600;font-size:0.95rem}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:18px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}nav{position:static;margin-bottom:12px}}
+    .card{background:linear-gradient(180deg,var(--card),#ffffff);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,30,60,0.06)}
+    section + section{margin-top:16px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{background:var(--glass);padding:8px 10px;border-radius:999px;font-weight:600;font-size:0.9rem}
+    .proj{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;background:var(--glass);padding:12px;border-radius:10px;transition:transform .25s ease}
+    .proj:hover{transform:translateY(-4px)}
+    .proj h3{margin:0;font-size:1.02rem}
+    .meta{color:var(--muted);font-size:0.9rem}
+    .techs{font-size:0.88rem;color:var(--muted)}
+    .download{display:inline-block;background:var(--accent);color:#072033;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
+    footer{margin-top:24px;color:var(--muted);font-size:0.9rem}
+
+    /* Existing reveal animation */
+    .reveal{opacity:0;transform:translateY(10px);transition:all 520ms cubic-bezier(.2,.9,.3,1)}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* NEW scroll-based animation */
+    .scroll-anim {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+    }
+    .scroll-anim.visible {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    @media print{body{background:white}nav{display:none}.wrap{box-shadow:none}}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <span style="margin-left:auto"></span>
+      <a class="download" href="cv.pdf" download>Download CV</a>
+    </nav>
+
+    <header class="card reveal scroll-anim" id="about">
+      <div style="display:flex;gap:16px;align-items:center">
+        <img src="profile.jpg" class="photo" alt="Profile photo">
+        <div>
+          <h1>Oumnya Jabil</h1>
+          <div class="sub">Final-year Mechatronics Engineering student — control systems, robotics & industrial automation</div>
+          <div style="margin-top:10px;color:var(--muted);font-weight:600">oumnya.jabil0@gmail.com • +212 634-348134</div>
+        </div>
+      </div>
+
+      <p style="margin-top:12px;color:var(--muted)">
+        This portfolio demonstrates core projects, internships, and technical competencies in embedded systems, PLC automation,
+        control design and mechanical modeling — prepared for a PFE internship in Industry 4.0 environments.
+      </p>
+    </header>
+
+    <div class="grid">
+      <main>
+
+        <section class="card reveal scroll-anim" id="projects">
+          <h2 style="margin-top:0">Selected Projects</h2>
+
+          <article class="proj scroll-anim">
+            <h3>Driver Drowsiness Detection System</h3>
+            <div class="meta">Embedded safety system using Arduino and sensors for real-time fatigue monitoring.</div>
+            <div class="techs">Technologies: Arduino, IMU/EEG sensors, C/C++ — real-time alerts.</div>
+          </article>
+
+          <article class="proj scroll-anim">
+            <h3>Automatic Vehicle Air Conditioning Control</h3>
+            <div class="meta">Thermal regulation control system designed & simulated in MATLAB/Simulink following V-cycle methodology.</div>
+            <div class="techs">MATLAB/Simulink — system modeling, control tuning, validation.</div>
+          </article>
+
+          <article class="proj scroll-anim">
+            <h3>Automation of Pneumatic Stations (FESTO)</h3>
+            <div class="meta">Industrial automation using Siemens PLCs for loading, handling, and transport cycles.</div>
+            <div class="techs">Siemens TIA Portal, Ladder Logic, Pneumatics.</div>
+          </article>
+
+          <article class="proj scroll-anim">
+            <h3>Automatic Car Parking System</h3>
+            <div class="meta">Real-time parking automation using ultrasonic sensors and Arduino.</div>
+            <div class="techs">Arduino, HC-SR04, servo motors, C/C++.</div>
+          </article>
+        </section>
+
+        <section class="card reveal scroll-anim" id="experience">
+          <h2>Internship & Experience</h2>
+
+          <strong>PFA Internship — Planned Maintenance, Leoni Wiring Systems</strong>
+          <div class="meta">Jul 2025 — Aug 2025, Bouznika</div>
+          <p style="color:var(--muted)">
+            Thermal control system optimization for Komax Alpha machines. Applied DMAIC, 8D, designed ventilation solutions and performed AMDEC to improve machine uptime and reliability.
+          </p>
+
+          <strong>Industrial & Quality Engineering</strong>
+          <div class="meta">Six Sigma • PDCA • 8D • ISO 9001 • Lean Manufacturing</div>
+        </section>
+
+        <section class="card reveal scroll-anim" id="education">
+          <h2>Education</h2>
+
+          <strong>National School of Applied Sciences — Tétouan</strong>
+          <div class="meta">Engineering Cycle — 5th year (2020–Present)</div>
+          <p style="color:var(--muted)">
+            Embedded Systems, Electronics, Mechanical Design, Automation, Control Systems, Signal Processing.
+          </p>
+        </section>
+      </main>
+
+      <aside>
+
+        <section class="card reveal scroll-anim" id="skills">
+          <h2>Technical Skills</h2>
+
+          <div class="skills">
+            <span class="chip">C / C++</span>
+            <span class="chip">MATLAB / Simulink</span>
+            <span class="chip">Arduino</span>
+            <span class="chip">PLC (Siemens TIA)</span>
+            <span class="chip">VHDL / FPGA</span>
+            <span class="chip">Proteus</span>
+            <span class="chip">CATIA V5</span>
+            <span class="chip">COSIMIR</span>
+            <span class="chip">PSIM</span>
+            <span class="chip">FluidSIM</span>
+          </div>
+
+          <h3 style="margin-top:12px">Languages</h3>
+          <div class="meta">Arabic (Native) • French (C2) • English (C2)</div>
+        </section>
+
+        <section class="card reveal scroll-anim" id="contact">
+          <h2>Contact</h2>
+          <p>Oumnya Jabil</p>
+          <p>oumnya.jabil0@gmail.com</p>
+          <p>+212 634-348134</p>
+        </section>
+
+        <section class="card reveal scroll-anim">
+          <h3>Quick CV Download</h3>
+          <p class="meta">Click below to open or save the CV.</p>
+          <a class="download" href="cv.pdf" target="_blank">Open CV (PDF)</a>
+        </section>
+
+      </aside>
+    </div>
+
+    <footer class="reveal scroll-anim">
+      <small>Portfolio generated from CV content. Ready for GitHub Pages deployment.</small>
+    </footer>
+  </div>
+
+  <script>
+    function revealAll(){
+      document.querySelectorAll('.reveal').forEach(el=>{
+        const r=el.getBoundingClientRect();
+        if(r.top < window.innerHeight-60){el.classList.add('visible')}
+      });
+    }
+    window.addEventListener('scroll',revealAll);
+    window.addEventListener('load',revealAll);
+
+    /* New Scroll-based animation */
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    document.querySelectorAll(
+      ".card, .proj, section, header, footer"
+    ).forEach(el => {
+      el.classList.add("scroll-anim");
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
+
